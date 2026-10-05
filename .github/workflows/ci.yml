@@ -5,12 +5,16 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Run tests
         run: echo "tests passed"
 
@@ -19,5 +23,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Lint
         run: echo "lint passed"
